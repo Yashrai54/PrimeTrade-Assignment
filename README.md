@@ -1,3 +1,4 @@
+
 # Backend Developer Intern – Assignment
 
 ## Project Overview
@@ -38,31 +39,41 @@ frontend/
     ├── context/         # API context
     ├── App.jsx          # Routes setup
     └── ProtectedRoute.jsx
-
+```
 ## Setup Instructions
 
-### 1. Clone the repo
+- **Clone the Repo**
+   ```bash
+   git clone <your_repo_url>
+   cd <repo_folder>
+- **Backend**
+   ```bash
+   cd backend
+   npm install
+   cp .env.example .env
+   ```
+- **Frontend**
 ```bash
-git clone <your-repo-url>
-cd <repo-folder>
+   cd frontend
+   npm install
+   npm start
+```
 
-cd backend
-npm install
-cp .env.example .env
-# Add your MongoDB Atlas URI and JWT secret to .env
-npm start
-
-cd frontend
-npm install
-npm start
+Open http://localhost:5173 in the browser to access the UI.
 
 ## API Documentation
 
 Postman collection included in the repo: Postman_Collection.json
+
+### Auth Routes
+
 | Endpoint           | Method | Description           |
 | ------------------ | ------ | --------------------- |
 | `/api/auth/signup` | POST   | Register a new user   |
 | `/api/auth/signin` | POST   | Login and receive JWT |
+
+### Tasks Routes
+
 | Endpoint         | Method | Description       | Roles      |
 | ---------------- | ------ | ----------------- | ---------- |
 | `/api/tasks`     | GET    | Get all tasks     | user/admin |
@@ -70,32 +81,35 @@ Postman collection included in the repo: Postman_Collection.json
 | `/api/tasks/:id` | PUT    | Update a task     | admin      |
 | `/api/tasks/:id` | DELETE | Delete a task     | admin      |
 
-Security & Input Sanitization
+## Security and Input sanitization
 
-Passwords are hashed with bcrypt
+- Passwords are hashed with bcrypt
 
-JWT tokens stored in httpOnly cookies
+- JWT tokens stored in httpOnly cookies
 
-Input fields are trimmed and normalized
+- Input fields are trimmed and normalized
 
-Protected routes ensure role-based access
+- Protected routes ensure role-based access
 
-Scalability & Optional Enhancements
+## Scalability and Optional Enhancements
 
-Project structure allows easy addition of new modules
+- Project structure allows easy addition of new modules
 
-Optional improvements:
+- Optional Improvements
+  - Redis caching for task queries
+  - Winston logging for backend requests
+  - Docker deployment for environment consistency
 
-Redis caching for task queries
+## Notes
+ - API versioning is implemented via route prefix: /api/v1/...
+ - Error and success responses are standardized
+ - Frontend handles authentication and route protection
 
-Winston logging for backend requests
+## Short Scalability Note
+ 
+ The backend project is structured to support microservices, modular controllers, and scalable database queries.
+Future enhancements like Redis caching, load balancing, and containerized deployment (Docker) can be easily integrated to handle higher traffic and reduce latency.
 
-Docker deployment for environment consistency
 
-Notes
 
-API versioning is implemented via route prefix: /api/v1/...
 
-Error and success responses are standardized
-
-Frontend handles authentication and route protection
