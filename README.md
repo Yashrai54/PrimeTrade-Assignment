@@ -1,58 +1,51 @@
-Backend Developer Intern – Assignment
-Project Overview
+# Backend Developer Intern – Assignment
 
-This project is a Scalable REST API with Authentication & Role-Based Access, with a basic React frontend to demonstrate API usage.
+## Project Overview
+This project is a **Scalable REST API with Authentication & Role-Based Access**, with a basic React frontend to demonstrate API usage.
 
-Core features implemented:
+**Core features implemented:**
+- User registration & login with **hashed passwords** and **JWT authentication**  
+- **Role-based access** (user vs admin)  
+- CRUD operations for a secondary entity: **Tasks**  
+- **API versioning**, **error handling**, and **validation**  
+- Basic frontend with React to interact with the APIs  
+- **Input sanitization** to prevent malformed requests  
+- **Security measures:** JWT handling, password hashing, protected routes  
 
-User registration & login with hashed passwords and JWT authentication
+---
 
-Role-based access (user vs admin)
+## Tech Stack
+- **Backend:** Node.js, Express, MongoDB (Atlas)  
+- **Frontend:** React.js  
+- **Authentication:** JWT + Cookies  
+- **Password hashing:** bcryptjs  
 
-CRUD operations for a secondary entity: Tasks
+---
 
-API versioning, error handling, and validation
-
-Basic frontend with React to interact with the APIs
-
-Input sanitization to prevent malformed requests
-
-Security measures: JWT handling, password hashing, protected routes
-
-Tech Stack
-
-Backend: Node.js, Express, MongoDB (Atlas)
-
-Frontend: React.js
-
-Authentication: JWT + Cookies
-
-Password hashing: bcryptjs
-
-Project Structure
+## Project Structure
 backend/
-├── config/       # DB connection & JWT token config
-├── controllers/  # Auth and Task controllers
-├── middleware/   # JWT verification & role-based access
-├── models/       # MongoDB schemas
-├── routes/       # API routes
-├── index.js      # Main server file
+├── config/ # DB connection & JWT token config
+├── controllers/ # Auth and Task controllers
+├── middleware/ # JWT verification & role-based access
+├── models/ # MongoDB schemas
+├── routes/ # API routes
+├── index.js # Main server file
 frontend/
 ├── src/
-│   ├── pages/    # Signup, Signin, Home
-│   ├── context/  # API context
-│   ├── App.jsx   # Routes setup
-│   └── ProtectedRoute.jsx
+│ ├── pages/ # Signup, Signin, Home
+│ ├── context/ # API context
+│ ├── App.jsx # Routes setup
+│ └── ProtectedRoute.jsx
 
-Setup Instructions
 
-Clone the repo
+---
 
+## Setup Instructions
+
+1. **Clone the repo**
+```bash
 git clone <your-repo-url>
 cd <repo-folder>
-
-
-Backend
 
 cd backend
 npm install
@@ -60,13 +53,9 @@ cp .env.example .env
 # Add your MongoDB Atlas URI and JWT secret to .env
 npm start
 
-
-Frontend
-
 cd frontend
 npm install
 npm start
-
 
 Open http://localhost:5173 in the browser to access the UI.
 
@@ -76,8 +65,8 @@ Postman collection included in the repo: Postman_Collection.json
 
 Auth Routes
 Endpoint	Method	Description
-/api/auth/signup	POST	Register a new user
-/api/auth/signin	POST	Login and receive JWT
+/api/v1/auth/signup	POST	Register a new user
+/api/v1/auth/signin	POST	Login and receive JWT
 Task Routes
 Endpoint	Method	Description	Roles
 /api/tasks	GET	Get all tasks	user/admin
