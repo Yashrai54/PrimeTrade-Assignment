@@ -39,32 +39,24 @@ frontend/
     ├── App.jsx          # Routes setup
     └── ProtectedRoute.jsx
 
----
-## Setup Instructions
-1.Clone the repo
 
+---
+
+## Setup Instructions
+
+### 1. Clone the repo
+```bash
 git clone <your-repo-url>
 cd <repo-folder>
-
-
-2.Backend
-
 cd backend
 npm install
 cp .env.example .env
 # Add your MongoDB Atlas URI and JWT secret to .env
 npm start
-
-
-3.Frontend
-
 cd frontend
 npm install
 npm start
-
-
 Open http://localhost:5173 in the browser to access the UI.
-
 API Documentation
 
 Postman collection included in the repo: Postman_Collection.json
@@ -112,4 +104,6 @@ Frontend handles authentication and route protection
 Short Scalability Note
 
 The backend project is structured to support microservices, modular controllers, and scalable database queries.
-Future enhancements like Redis caching, load balancing, and containerized deployment (Docker) can be easily integrated to handle higher traffic and reduce latency
+Future enhancements like Redis caching, load balancing, and containerized deployment (Docker) can be easily integrated to handle higher traffic and reduce latency.
+
+ng, load balancing, and containerized deployment (Docker) can be easily integrated to handle higher traffic and reduce latency
