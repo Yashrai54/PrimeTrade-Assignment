@@ -23,6 +23,7 @@ This project is a **Scalable REST API with Authentication & Role-Based Access**,
 ---
 
 ## Project Structure
+```text
 backend/
 ├── config/       # DB connection & JWT token config
 ├── controllers/  # Auth and Task controllers
@@ -39,38 +40,35 @@ frontend/
     └── ProtectedRoute.jsx
 
 ## Setup Instructions
-
-1. **Clone the repo**
-```bash
+-** Clone the Repo**
 git clone <your-repo-url>
 cd <repo-folder>
-
+-**Backend**
 cd backend
 npm install
 cp .env.example .env
 # Add your MongoDB Atlas URI and JWT secret to .env
-npm start
-
+nodemon index.js
+-**frontend**
 cd frontend
 npm install
-npm start
+npm run dev
 
-Open http://localhost:5173 in the browser to access the UI.
-
-API Documentation
-
+## API Documentation
 Postman collection included in the repo: Postman_Collection.json
 
-Auth Routes
-Endpoint	Method	Description
-/api/v1/auth/signup	POST	Register a new user
-/api/v1/auth/signin	POST	Login and receive JWT
-Task Routes
-Endpoint	Method	Description	Roles
-/api/tasks	GET	Get all tasks	user/admin
-/api/tasks	POST	Create a new task	admin
-/api/tasks/:id	PUT	Update a task	admin
-/api/tasks/:id	DELETE	Delete a task	admin
+| Endpoint           | Method | Description           |
+| ------------------ | ------ | --------------------- |
+| `/api/auth/signup` | POST   | Register a new user   |
+| `/api/auth/signin` | POST   | Login and receive JWT |
+
+| Endpoint         | Method | Description       | Roles      |
+| ---------------- | ------ | ----------------- | ---------- |
+| `/api/tasks`     | GET    | Get all tasks     | user/admin |
+| `/api/tasks`     | POST   | Create a new task | admin      |
+| `/api/tasks/:id` | PUT    | Update a task     | admin      |
+| `/api/tasks/:id` | DELETE | Delete a task     | admin      |
+
 Security & Input Sanitization
 
 Passwords are hashed with bcrypt
@@ -100,3 +98,9 @@ API versioning is implemented via route prefix: /api/v1/...
 Error and success responses are standardized
 
 Frontend handles authentication and route protection
+
+Short Scalability Note
+
+The backend project is structured to support microservices, modular controllers, and scalable database queries.
+Future enhancements like Redis caching, load balancing, and containerized deployment (Docker) can be easily integrated to handle higher traffic and reduce latency.
+
