@@ -24,21 +24,19 @@ This project is a **Scalable REST API with Authentication & Role-Based Access**,
 
 ## Project Structure
 backend/
-├── config/ # DB connection & JWT token config
-├── controllers/ # Auth and Task controllers
-├── middleware/ # JWT verification & role-based access
-├── models/ # MongoDB schemas
-├── routes/ # API routes
-├── index.js # Main server file
+├── config/       # DB connection & JWT token config
+├── controllers/  # Auth and Task controllers
+├── middleware/   # JWT verification & role-based access
+├── models/       # MongoDB schemas
+├── routes/       # API routes
+└── index.js      # Main server file
+
 frontend/
-├── src/
-│ ├── pages/ # Signup, Signin, Home
-│ ├── context/ # API context
-│ ├── App.jsx # Routes setup
-│ └── ProtectedRoute.jsx
-
-
----
+└── src/
+    ├── pages/           # Signup, Signin, Home
+    ├── context/         # API context
+    ├── App.jsx          # Routes setup
+    └── ProtectedRoute.jsx
 
 ## Setup Instructions
 
