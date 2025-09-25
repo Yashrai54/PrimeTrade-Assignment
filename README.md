@@ -38,15 +38,16 @@ frontend/
     ├── context/         # API context
     ├── App.jsx          # Routes setup
     └── ProtectedRoute.jsx
-Setup Instructions
 
-Clone the repo
+---
+## Setup Instructions
+1.Clone the repo
 
 git clone <your-repo-url>
 cd <repo-folder>
 
 
-Backend
+2.Backend
 
 cd backend
 npm install
@@ -55,7 +56,7 @@ cp .env.example .env
 npm start
 
 
-Frontend
+3.Frontend
 
 cd frontend
 npm install
